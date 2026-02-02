@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - TravelBloom</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+        }
+
+        nav {
+            height: 60px;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            position: fixed;
+            width: 100%;
+            z-index: 9999; 
+        }
+
+        nav h2 {
+            margin-right: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .page {
+            min-height: 100vh;
+            background-image: url("https://images.unsplash.com/photo-1449824913935-59a10b8d2000");
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 120px 80px;
+            z-index: 1;
+        }
+
+        .page::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,120,120,0.6);
+            z-index: -1; 
+        }
+
+        .content {
+            position: relative;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        textarea {
+            height: 120px;
+        }
+
+        button {
+            padding: 10px;
+            width: 100%;
+            background: #00c6c6;
+            border: none;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h2>TravelBloom</h2>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+</nav>
+
+<section class="page">
+    <div class="content">
+        <h1>CONTACT US</h1>
+
+        <form>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TravelBloom</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #000;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav h2 {
+            color: #fff;
+            margin-right: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        nav input {
+            margin-left: auto;
+            padding: 6px 10px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            width: 200px;
+        }
+
+        nav button {
+            margin-left: 8px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            background-color: #00c6c6;
+            color: #fff;
+        }
+
+
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            background-image: url("https://images.unsplash.com/photo-1449824913935-59a10b8d2000");
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-left: 100px;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 120, 120, 0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            color: #fff;
+            max-width: 500px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .hero-content button {
+            padding: 10px 24px;
+            background-color: #00c6c6;
+            border: none;
+            border-radius: 20px;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        /* SOCIAL ICONS */
+        .social-icons {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            width: 32px;
+            height: 32px;
+            background-color: #00c6c6;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        #recommendations {
+  position: absolute;
+  top: 100px;
+  right: 40px;
+  width: 380px;
+  z-index: 10;
+}
+
+#results {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* CARD */
+.recommendation-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+/* IMAGE */
+.recommendation-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.card-body {
+  padding: 15px;
+}
+
+.card-body h3 {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.card-body p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+/* BUTTON */
+.visit-btn {
+  background: #00c6c6;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav>
+        <h2>TravelBloom</h2>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+
+        <input type="text" id="searchInput" placeholder="Search destinations...">
+        <button id="searchBtn">Search</button>
+        <button id="resetBtn">Clear</button>
+    </nav>
+
+    <!-- HOME / HERO SECTION -->
+    <section class="hero">
+
+        <!-- SOCIAL MEDIA ICONS -->
+        <div class="social-icons">
+            <div class="social-icons">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        </div>
+
+        <!-- INTRO CONTENT -->
+        <div class="hero-content">
+            <h1>EXPLORE<br>DREAM<br>DESTINATION</h1>
+            <p>
+                It encourages exploration of unfamiliar territories, embracing diverse cultures
+                and landscapes, while pursuing the desired destination that captivates the heart
+                and ignites a sense of wonder.
+            </p>
+            <button>BOOK NOW</button>
+        </div>
+
+        <div id="recommendations">
+            <div id="results"></div>
+          </div>
+          
+    </section>
+
+
+      <script src="script.js"></script>
+
+</body>
+</html>
